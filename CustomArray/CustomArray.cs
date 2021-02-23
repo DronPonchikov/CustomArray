@@ -37,7 +37,7 @@ namespace CustomArray
             {
                 if (_length <= 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException(nameof(_length), "Length should be greater than 0");
                 }
                 return _length;
             }
@@ -45,7 +45,7 @@ namespace CustomArray
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException(nameof(_length), "Length should be greater than 0");
                 }
 
                 _length = value;
@@ -61,7 +61,7 @@ namespace CustomArray
             {
                 if (array==null)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(array), "Your array is null");
 
                 }
                 return array;
@@ -102,7 +102,7 @@ namespace CustomArray
 
             if (list.Count()==0)
             {
-                throw new ArgumentException();
+                throw new ArgumentException(nameof(list), "Your list have no params");
             }
             First = first;
             Length = list.Count();
@@ -122,12 +122,12 @@ namespace CustomArray
         {
             if (list == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(list), "Your list is null");
             }
 
-            if (/*list.Length==0*/ list.Count()==0)
+            if ( list.Count()==0)
             {
-                throw new ArgumentException();
+                throw new ArgumentException(nameof(list), "Your list have no params");
             }
 
             Length = list.Length;
@@ -149,7 +149,7 @@ namespace CustomArray
             {
                 if (item > Last || item < First)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException(nameof(item), "Index is null");
                 }
                 if (First < 0)
                 {
@@ -166,11 +166,11 @@ namespace CustomArray
             {
                 if (value==null)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(value), "Index is null");
                 }
                 if (item > Last || item < First )
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException(nameof(value), "SystemOutOfBoundsOfArray");
                 }
                 if (First<0)
                 {
