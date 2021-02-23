@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace CustomArray
 {
-    public class CustomArray<T> : IEnumerable<T>
+    public  class CustomArray<T> : IEnumerable<T>
     {
-        private readonly T [] array;
+        private readonly T [] my_array;
         private int _length;
         /// <summary>
         /// Should return first index of array
@@ -35,17 +35,14 @@ namespace CustomArray
         {
             get
             {
-                if (_length <= 0)
-                {
-                    throw new ArgumentException(nameof(_length), "Length should be greater than 0");
-                }
+                
                 return _length;
             }
             private set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException(nameof(_length), "Length should be greater than 0");
+                    throw new ArgumentException(nameof(_length));
                 }
 
                 _length = value;
@@ -59,12 +56,8 @@ namespace CustomArray
         {
             get
             {
-                if (array==null)
-                {
-                    throw new ArgumentNullException(nameof(array), "Your array is null");
-
-                }
-                return array;
+                
+                return my_array;
             
             }
             
@@ -80,7 +73,7 @@ namespace CustomArray
         {
             First = first;
             Length = length;
-            array = new T [length];
+            my_array = new T [length];
            
 
         }
@@ -106,8 +99,7 @@ namespace CustomArray
             }
             First = first;
             Length = list.Count();
-            array = list.ToArray();
-            
+            my_array = list.ToArray();            
 
         }
 
@@ -132,7 +124,7 @@ namespace CustomArray
 
             Length = list.Length;
             First = first;
-            array=list;
+            my_array=list;
             
         }
 
@@ -187,7 +179,7 @@ namespace CustomArray
 
         public IEnumerator<T> GetEnumerator()
         { 
-            foreach (var item in array)
+            foreach (var item in my_array)
             {
                 yield return item;
             }
