@@ -141,7 +141,7 @@ namespace CustomArray
             {
                 if (item > Last || item < First)
                 {
-                    throw new ArgumentException( "Index is null",nameof(item),);
+                    throw new ArgumentException( "Index is null",nameof(item));
                 }
                 if (First < 0)
                 {
