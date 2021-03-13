@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,7 +119,7 @@ namespace CustomArray
 
             if ( list.Count()==0)
             {
-                throw new ArgumentException(nameof(list), "Your list have no params");
+                throw new ArgumentException( "Your list has no params",nameof(list));
             }
 
             Length = list.Length;
@@ -141,7 +141,7 @@ namespace CustomArray
             {
                 if (item > Last || item < First)
                 {
-                    throw new ArgumentException(nameof(item), "Index is null");
+                    throw new ArgumentException( "Index is null",nameof(item),);
                 }
                 if (First < 0)
                 {
@@ -162,7 +162,7 @@ namespace CustomArray
                 }
                 if (item > Last || item < First )
                 {
-                    throw new ArgumentException(nameof(value), "SystemOutOfBoundsOfArray");
+                    throw new ArgumentException("SystemOutOfBoundsOfArray",(nameof(value));
                 }
                 if (First<0)
                 {
