@@ -162,7 +162,7 @@ namespace CustomArray
                 }
                 if (item > Last || item < First )
                 {
-                    throw new ArgumentException("SystemOutOfBoundsOfArray",(nameof(value));
+                    throw new ArgumentException( "SystemOutOfBoundsOfArray",(nameof(value));
                 }
                 if (First<0)
                 {
