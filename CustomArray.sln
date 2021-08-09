@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomArray", "CustomArray\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomArray.Tests", "CustomArray.Tests\CustomArray.Tests.csproj", "{B7A3C0B7-3D1C-4485-9871-76C0D32B71FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugArray", "DebugArray\DebugArray.csproj", "{8323EA5E-8623-4A16-BC5C-9B738864F5D7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{B7A3C0B7-3D1C-4485-9871-76C0D32B71FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7A3C0B7-3D1C-4485-9871-76C0D32B71FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7A3C0B7-3D1C-4485-9871-76C0D32B71FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8323EA5E-8623-4A16-BC5C-9B738864F5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8323EA5E-8623-4A16-BC5C-9B738864F5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8323EA5E-8623-4A16-BC5C-9B738864F5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8323EA5E-8623-4A16-BC5C-9B738864F5D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
