@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace CustomArray
 {
-    public class CustomArray<T> : IEnumerable<T>
+    public  class CustomArray<T> : IEnumerable<T>
     {
-        private readonly T [] array;
+        private readonly T [] my_array;
+        private int _length;
         /// <summary>
         /// Should return first index of array
         /// </summary>
@@ -34,20 +35,17 @@ namespace CustomArray
         {
             get
             {
-                if (Length < 0)
-                {
-                    throw new ArgumentException();
-                }
-                return Length;
+                
+                return _length;
             }
             private set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException(nameof(_length));
                 }
 
-                Length = value;
+                _length = value;
             }
         }
 
@@ -56,8 +54,13 @@ namespace CustomArray
         /// </summary>
         public T[] Array
         {
-            get=> array;
-            //private set;
+            get
+            {
+                
+                return my_array;
+            
+            }
+            
         }
 
 
@@ -70,8 +73,8 @@ namespace CustomArray
         {
             First = first;
             Length = length;
-            array = new T [Length];
-            //Array = array;
+            my_array = new T [length];
+           
 
         }
 
@@ -90,14 +93,13 @@ namespace CustomArray
                 throw new NullReferenceException();
             }
 
-            if (first== 0 && list.Count()<0)
+            if (list.Count()==0)
             {
-                throw new ArgumentException();
+                throw new ArgumentException(nameof(list), "Your list have no params");
             }
             First = first;
             Length = list.Count();
-            array = list.ToArray();
-            //Array = array;
+            my_array = list.ToArray();            
 
         }
 
@@ -112,18 +114,18 @@ namespace CustomArray
         {
             if (list == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(list), "Your list is null");
             }
 
-            if (list.Length==0)
+            if ( list.Count()==0)
             {
-                throw new ArgumentException();
+                throw new ArgumentException( "Your list has no params",nameof(list));
             }
 
             Length = list.Length;
             First = first;
-            array=list.ToArray();
-            //Array = array;
+            my_array=list;
+            
         }
 
         /// <summary>
@@ -137,31 +139,47 @@ namespace CustomArray
         {
             get
             {
-                if (item > Last || item< First)
+                if (item > Last || item < First)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException( "Index is null",nameof(item));
+                }
+                if (First < 0)
+                {
+                   return  Array[First + Length];
+                }
+                else
+                {
+                    return Array[item];
                 }
 
-                return Array[item];
+                
             }
             set
             {
                 if (value==null)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(value), "Index is null");
                 }
-                if (item > Last || item < First)
+                if (item > Last || item < First )
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException( "SystemOutOfBoundsOfArray",(nameof(value));
                 }
-
-                Array[item] = value;
+                if (First<0)
+                {
+                    Array[First + Length] = value;
+                }
+                else
+                {
+                    Array[item] = value;
+                }
+                
+               
             }
         }
 
         public IEnumerator<T> GetEnumerator()
         { 
-            foreach (var item in Array)
+            foreach (var item in my_array)
             {
                 yield return item;
             }
